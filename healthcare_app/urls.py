@@ -22,5 +22,6 @@ urlpatterns = [
     path("users/", include("users.urls")),
     path("patients/", include("patients.urls")),
     path("doctors/", include("doctors.urls")),  # Doctor app
+    path("doctors_patients/", include("doctors_patients.urls")),  # Doctor-Patient Mapping app
     path("", include("home.urls")),  # Home app
 ]
