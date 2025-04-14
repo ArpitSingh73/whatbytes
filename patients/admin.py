@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import Patient
 
-# Register your models here.
+
+@admin.register(Patient)
+class PatientAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "age", "gender", "created_by", "created_at")
+    search_fields = ("name", "created_by__username")
+    list_filter = ("gender",)

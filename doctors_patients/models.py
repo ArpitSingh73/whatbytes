@@ -13,5 +13,8 @@ class PatientDoctorMapping(models.Model):
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ('patient', 'doctor')  # No duplicate mappings!
+
     def __str__(self):
-        return f"{self.patient.name} → {self.doctor.name}"
+        return f"{self.patient.name} <-> {self.doctor.name}"

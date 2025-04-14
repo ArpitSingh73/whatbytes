@@ -11,5 +11,8 @@ class Patient(models.Model):
     gender = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ('name', 'age', 'gender', 'created_by')  #  Only one matching entry per user
+
     def __str__(self):
         return self.name

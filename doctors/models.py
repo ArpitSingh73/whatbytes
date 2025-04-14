@@ -11,5 +11,8 @@ class Doctor(models.Model):
     bio = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ("name", "specialization", "created_by")
+
     def __str__(self):
         return self.name

@@ -32,17 +32,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'users',
-    'patients',
-    'home',
-    'doctors',
-    'doctors_patients',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "users",
+    "patients",
+    "home",
+    "doctors",
+    "doctors_patients",
+    "drf_yasg",  # new
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,6 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = "users.CustomUser"
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # default: 5 minutes
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # default: 5 minutes
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),     # default: 1 day
 }
